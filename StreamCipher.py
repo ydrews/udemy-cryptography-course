@@ -17,7 +17,7 @@ def encrypt(key, message):
     return bytes([message[i] ^ key.get_key_byte() for i in range(len(message))])
 
 
-def transmit(cipher):
+def transmit(cipher, likely):
     b = []
     for c in cipher:
         if random.randrange(0, likely) == 0:
